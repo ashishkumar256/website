@@ -39,6 +39,7 @@
 
 //src/App.js
 
+/*
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
@@ -55,6 +56,33 @@ function App() {
         </Switch>
       </Router>
   );
+}
+
+export default App;
+*/
+
+// src/App.js
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './components/Home';
+import FlowerPlants from './components/FlowerPlants';
+import FlowerProducts from './components/FlowerProducts'; // Make sure this component exists and is properly exported
+// Add any additional component imports here
+
+function App() {
+    return (
+        <Router>
+            <Header />
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/flowers" component={FlowerPlants} />
+                <Route path="/products" component={FlowerProducts} />
+                {/* Add any additional routes here */}
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;
